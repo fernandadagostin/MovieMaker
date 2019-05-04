@@ -1,0 +1,19 @@
+{
+  "name": "moviemaker",
+  "version": "1.0.0",
+  "description": "Automatic create movie and upload to youtube.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fernandadagostin/MovieMaker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fernandadagostin/MovieMaker/issues"
+  },
+  "homepage": "https://github.com/fernandadagostin/MovieMaker#readme"
+}
