@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/fernandadagostin/MovieMaker/issues"
   },
-  "homepage": "https://github.com/fernandadagostin/MovieMaker#readme"
+  "homepage": "https://github.com/fernandadagostin/MovieMaker#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.9"
+  }
 }
