@@ -193,6 +193,7 @@ async function robot() {
                     console.log('> [video-robot] YouTube thumbnail created')
                     resolve()
                 })
+        
         })
 
     }
