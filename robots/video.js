@@ -147,10 +147,12 @@ async function robot() {
             const aerenderFilePath = 'C:/Program Files/Adobe/Adobe After Effects CC 2019/Support Files/aerender'
             const templateFilePath = `${rootPath}/templates/1/template.aep`
             const destinationFilePath = `${rootPath}/content/output.mov`
+            const logFilePath = `${rootPath}/content/logAfterEffects.txt`
 
             console.log('> Starting After Effects')
 
             const aerender = spawn(aerenderFilePath, [
+                
                 '-comp', 'main',
                 '-project', templateFilePath, 
                 '-output', destinationFilePath
