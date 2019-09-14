@@ -14,6 +14,7 @@ const nlu = new NaturalLanguageUnderstandingV1({
 const state = require('./state.js')
 
 async function robot() {
+    console.log('> [text-robot] Stating...')
     const content = state.load()
 
     await fetchContentFromWikipedia(content)
@@ -31,6 +32,7 @@ async function robot() {
         const wikipediaContent = wikipediaResponde.get()
 
         content.sourceContentOriginal = wikipediaContent.content
+        console.log('> [text-robot] Fetching done!')
     }
 
     function sanitizeContent(content) {
@@ -76,8 +78,13 @@ async function robot() {
     }
 
     async function fetchKeywordOfAllSentences(content) {
+        console.log('> [text-robot] Starting to fetch keywords form Watson')
         for (const sentence of content.sentences) {
+            console.log(`> [text-robot] Sentence: "${sentence.text}"`)
+            
             sentence.keywords = await fetchtWatsonAndReturnKeywords(sentence.text)
+            
+            console.log(`> [text-robot] Keywords: "${sentence.keywords.join(',')}ln"`)
         }
     }
 
@@ -90,7 +97,8 @@ async function robot() {
                 }
             }, (error, response) => {
                 if (error) {
-                    throw error
+                    reject(error)
+                    return
                 }
 
                 const keywords = response.keywords.map((keyword) => {
